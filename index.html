@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Trinary</title>
+		<link rel="stylesheet" href="styles/main.css" />
+	</head>
+	<body>
+		<div class="input">
+			<input
+				class="input__decimal"
+				type="number"
+				onchange="document.querySelector('.input__trin').value = toTrin(this.valueAsNumber);"
+			/>
+			<input class="input__trin" type="text" />
+		</div>
+		<script src="js/trinary.js"></script>
+	</body>
+</html>
