@@ -19,6 +19,32 @@ const trit = {
 	},
 };
 
+class TritArray extends Array {
+	constructor(valueArray) {
+		super();
+
+		valueArray.forEach((value) => {
+			this.push(toTrit(value));
+		});
+	}
+
+	value() {
+		let valueArray = [];
+		this.forEach((trit) => {
+			valueArray.push(trit.value);
+		});
+		return valueArray;
+	}
+
+	string() {
+		let stringArray = [];
+		this.forEach((trit) => {
+			stringArray.push(trit.string);
+		});
+		return stringArray;
+	}
+}
+
 function toTrit(n) {
 	switch (n) {
 		case 1:
@@ -62,7 +88,7 @@ function toTrin(decInput) {
 			case 3:
 				// when position value greater that 1 use lowest trit
 				// and pass a carry to the next position
-				tritArray[i] = 0;
+				tritArray[i] = trit.nul;
 
 				// if there is a next position increment it (carry)
 				if (unbalancedArray[i + 1]) {
@@ -75,7 +101,7 @@ function toTrin(decInput) {
 			case -3:
 				// when position value greater that 1 use lowest trit
 				// and pass a carry to the next position
-				tritArray[i] = 0;
+				tritArray[i] = trit.nul;
 
 				// if there is a next position increment it (carry)
 				if (unbalancedArray[i + 1]) {
@@ -88,7 +114,7 @@ function toTrin(decInput) {
 			case 2:
 				// when position value greater that 1 use lowest trit
 				// and pass a carry to the next position
-				tritArray[i] = -1;
+				tritArray[i] = trit.neg;
 
 				// if there is a next position increment it (carry)
 				if (unbalancedArray[i + 1]) {
@@ -101,7 +127,7 @@ function toTrin(decInput) {
 			case -2:
 				// when position value lower that -1 use lowest trit
 				// and pass a carry to the next position
-				tritArray[i] = 1;
+				tritArray[i] = trit.pos;
 
 				// if there is a next position
 				if (unbalancedArray[i + 1]) {
@@ -112,7 +138,7 @@ function toTrin(decInput) {
 				}
 				break;
 			default:
-				tritArray[i] = unbalancedArray[i];
+				tritArray[i] = toTrit(unbalancedArray[i]);
 		}
 	}
 	return tritArray;
@@ -127,3 +153,5 @@ function fromTrin(trinArray) {
 
 	return decimal;
 }
+
+function tritAs(tritProp, tritsArray) {}
