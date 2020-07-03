@@ -117,3 +117,13 @@ function toTrin(decInput) {
 	}
 	return tritArray;
 }
+
+function fromTrin(trinArray) {
+	let decimal = 0;
+
+	for (i = 0; i < trinArray.length; i++) {
+		decimal += trinArray[i] * 3 ** i;
+	}
+
+	return decimal;
+}
