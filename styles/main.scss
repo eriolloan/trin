@@ -16,7 +16,8 @@ body {
 	text-align: center;
 
 	&__decimal,
-	&__trin {
+	&__trinValue,
+	&__trinString {
 		border: none;
 		border-bottom: 2px solid $foreground;
 		background-color: transparent;

@@ -11,7 +11,7 @@ body {
   text-align: center;
 }
 
-.input__decimal, .input__trin {
+.input__decimal, .input__trinValue, .input__trinString {
   border: none;
   border-bottom: 2px solid lightgray;
   background-color: transparent;
@@ -24,7 +24,7 @@ body {
   transition: background 0.3s ease;
 }
 
-.input__decimal:hover, .input__trin:hover {
+.input__decimal:hover, .input__trinValue:hover, .input__trinString:hover {
   background-color: #666666;
 }
 /*# sourceMappingURL=main.css.map */

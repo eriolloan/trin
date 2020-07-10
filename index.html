@@ -11,10 +11,12 @@
 			<input
 				class="input__decimal"
 				type="number"
-				onchange="document.querySelector('.input__trin').value = toTrin(this.valueAsNumber);"
+				onchange="currentTritArray = toTrin(this.valueAsNumber); syncInputs()"
 			/>
-			<input class="input__trin" type="text" />
+			<input class="input__trinValue" type="text" data-as="value" />
+			<input class="input__trinString" type="text" data-as="string" />
 		</div>
 		<script src="js/trinary.js"></script>
+		<script src="js/syncInputs.js"></script>
 	</body>
 </html>
