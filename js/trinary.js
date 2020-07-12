@@ -174,7 +174,11 @@ function toTrin(decInput) {
 				tritArray[i] = toTrit(unbalancedValuesArray[i]);
 		}
 	}
-	return tritArray;
+
+	// reverse position order
+	// until now arrays kept values from lowest exponent to highest exponent
+	// (to manage carries)
+	return tritArray.reverse();
 }
 
 function fromTrin(trinArray) {
